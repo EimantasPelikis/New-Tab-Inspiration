@@ -24,3 +24,11 @@ Notes:
 - The extension only overrides the New Tab page, not the startup page or Home button.
 - Chrome may show a "disable developer mode extensions" prompt on launch.
 - The built app fetches `https://zenquotes.io/api/random` directly; `manifest.json` grants that host permission.
+
+## Privacy
+
+See [PRIVACY.md](PRIVACY.md).
+
+## License
+
+[Eclipse Public License 2.0](LICENSE) (EPL-2.0).
