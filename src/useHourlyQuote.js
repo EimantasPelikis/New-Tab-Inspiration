@@ -11,8 +11,14 @@ function readCache() {
   }
 }
 
+// Dev uses the Vite proxy (ZenQuotes sends no CORS headers). Built output runs
+// as a Chrome extension page, where host_permissions allow the direct request.
+const QUOTE_URL = import.meta.env.DEV
+  ? '/zenquotes/random'
+  : 'https://zenquotes.io/api/random'
+
 async function fetchQuote() {
-  const res = await fetch('/zenquotes/random')
+  const res = await fetch(QUOTE_URL)
   if (!res.ok) throw new Error(`ZenQuotes responded ${res.status}`)
   const [item] = await res.json()
   if (!item?.q) throw new Error('Unexpected ZenQuotes response')
