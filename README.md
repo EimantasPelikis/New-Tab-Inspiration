@@ -1,4 +1,4 @@
-# today-date
+# New-Tab-Inspiration
 
 Shows today's date, a live clock and an hourly quote ([ZenQuotes](https://zenquotes.io/)). Built with React + Vite, and packaged as a Chrome extension that replaces the New Tab page.
 

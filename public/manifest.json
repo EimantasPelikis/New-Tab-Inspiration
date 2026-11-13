@@ -1,19 +1,12 @@
 {
   "manifest_version": 3,
   "name": "NewTab Inspiration",
-  "version": "1.0.0",
   "description": "Replaces the new tab page with today's date, a live clock and an hourly quote.",
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
+  "permissions": ["storage"],
   "host_permissions": ["https://zenquotes.io/*"],
-  "action": {
-    "default_title": "NewTab Inspiration",
-    "default_icon": {
-      "16": "icon-16.png",
-      "48": "icon-48.png"
-    }
-  },
   "icons": {
     "16": "icon-16.png",
     "48": "icon-48.png",
