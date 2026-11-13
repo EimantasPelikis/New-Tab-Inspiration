@@ -21,6 +21,7 @@ Single-page React 19 + Vite app (plain JS/JSX, no TypeScript) that shows the cur
   - `check()` reads the cache and fetches only if it is missing or at least an hour old; otherwise it schedules a timer for the remaining time. It re-runs on `visibilitychange`, `online`, and `chrome.storage.onChanged` (so tabs adopt a quote another tab fetched).
   - Fetches abort after 10s. Success reschedules an hour out; failure keeps the cached quote, sets `error`, and retries in 5 minutes.
 - `public/background.js` is a minimal MV3 service worker (copied as-is, not bundled): clicking the toolbar icon opens `chrome://extensions/?id=<id>`. The manifest keeps an `action` (no popup) so Chrome draws the icon in colour rather than greyed out.
+- Icons: `assets-src/icon-source.svg` is the source artwork (outside `public/`, so it isn't shipped). `public/icon-{16,48,128}.png` are rendered from it (transparent background, square canvas), and the 48px PNG is also inlined as a base64 favicon in `index.html`. Re-render and re-embed if the artwork changes.
 - Quote URL depends on the mode (`import.meta.env.DEV` in `useHourlyQuote.js`): dev uses the Vite proxy `/zenquotes/*` → `https://zenquotes.io/api/*` (ZenQuotes sends no CORS headers); the built extension calls `https://zenquotes.io/api/random` directly, allowed by `host_permissions` in `manifest.json`.
 
 ## Styling
