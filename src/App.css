@@ -1,21 +1,134 @@
+body {
+  background: linear-gradient(
+    125deg,
+    #ff6ec4,
+    #7873f5,
+    #4adeff,
+    #43e97b,
+    #fee140,
+    #ff6ec4
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 18s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
   text-align: center;
+}
+
+.card {
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 20px 40px -12px rgba(30, 10, 80, 0.35);
+  color: #fff;
+}
+
+.card h1,
+.card .time {
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(30, 10, 80, 0.35);
+}
+
+.date-card {
+  padding: 1.25rem 3rem 0.5rem;
+  border-radius: 2.5rem 2.5rem 2.5rem 0.75rem;
+  transform: rotate(-2deg);
+}
+
+.time-card {
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  transform: rotate(1.5deg);
+}
+
+.quote-card {
+  position: relative;
+  max-width: 40rem;
+  margin-top: 1rem;
+  padding: 3rem 3rem 2rem;
+  border-radius: 0.75rem 3rem 0.75rem 3rem;
+  transform: rotate(-1deg);
+  background: rgba(24, 12, 60, 0.72);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 0 0 6px rgba(255, 255, 255, 0.18),
+    0 0 48px 8px rgba(255, 110, 196, 0.55),
+    0 30px 60px -12px rgba(20, 5, 60, 0.6);
+}
+
+/* Oversized decorative opening quote mark */
+.quote-card::before {
+  content: '“';
+  position: absolute;
+  top: -0.2em;
+  left: 0.25em;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 7rem;
+  line-height: 1;
+  background: linear-gradient(135deg, #ff6ec4, #fee140);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.quote-card blockquote {
+  margin: 0 0 1.25rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.75rem;
+  font-style: italic;
+  line-height: 1.4;
+  text-shadow: none;
+}
+
+.author {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fee140;
+  opacity: 1;
+}
+
+.attribution {
+  font-size: 0.8rem;
+  color: #fff;
+  opacity: 0.85;
+}
+
+.attribution a {
+  color: #fff;
 }
 
 .time {
   font-size: 3rem;
   font-variant-numeric: tabular-nums;
-  margin: 0.5rem 0 0;
+  margin: 0;
 }
 
 .label {
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  opacity: 0.6;
+  opacity: 0.85;
   margin: 0;
 }

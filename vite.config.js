@@ -4,4 +4,14 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    proxy: {
+      // ZenQuotes sends no CORS headers without an API key, so proxy it.
+      '/zenquotes': {
+        target: 'https://zenquotes.io',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/zenquotes/, '/api'),
+      },
+    },
+  },
 })
