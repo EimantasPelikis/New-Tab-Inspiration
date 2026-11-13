@@ -7,6 +7,17 @@
   },
   "permissions": ["storage"],
   "host_permissions": ["https://zenquotes.io/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "NewTab Inspiration",
+    "default_icon": {
+      "16": "icon-16.png",
+      "48": "icon-48.png",
+      "128": "icon-128.png"
+    }
+  },
   "icons": {
     "16": "icon-16.png",
     "48": "icon-48.png",

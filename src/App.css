@@ -1,5 +1,9 @@
-body {
-  background: linear-gradient(
+/* On <html> (not <body>) so it paints the whole canvas from the first frame;
+   index.html inlines the same base colour to avoid a flash before this loads. */
+html {
+  min-height: 100dvh;
+  background-color: #7873f5;
+  background-image: linear-gradient(
     125deg,
     #ff6ec4,
     #7873f5,
@@ -13,7 +17,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body {
+  html {
     animation: none;
   }
 }
